@@ -8,10 +8,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Weboratory</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
-
  
 
   	<!-- Facebook and Twitter integration -->
@@ -26,7 +22,7 @@
     <meta name="twitter:card" content="" />
     
 
-    <link rel='shortcut icon' type='image/x-icon' href="https://img.icons8.com/color/48/000000/w.png" />
+    <link rel='shortcut icon' type='image/x-icon' href="https://raw.githubusercontent.com/akashcoc/weboratory/master/image/48x48.png" />
 
 	<!-- <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'> -->
 	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
@@ -61,14 +57,69 @@
 					<div class="display-t js-fullheight">
 						<div class="display-tc animate-box">
 							<nav class="fh5co-nav" role="navigation">
-								<div id="fh5co-logo"><a href="thanks.html">Weboratory<strong></strong></a></div>
+								<div id="fh5co-logo"><img src="https://raw.githubusercontent.com/akashcoc/weboratory/master/image/Asset%204.png" alt="" style="height: 100px;"></div>
 							</nav>
 							<h1>We Are Coming Soon!</h1>
 							
-							<div class="simply-countdown simply-countdown-one"></div>
+
+	<style> 
+	
+	
+	 #clockdiv{ 
+		font-family: sans-serif; 
+		color: #EB2188; 
+		display: inline-block; 
+		font-weight: 100; 
+		text-align: center; 
+		font-size: 30px; 
+		font: bold;
+	} 
+	#clockdiv > div{ 
+		padding: 10px; 
+		border-radius: 3px; 
+		background: #080A52; 
+		display: inline-block; 
+	} 
+	#clockdiv div > span{ 
+		padding: 15px; 
+		border-radius: 3px; 
+		background: #080A52; 
+		display: inline-block; 
+	} 
+	smalltext{ 
+		padding-top: 5px; 
+		font-size: 16px; 
+	} 
+	#clockdiv .smalltext{
+		color: white;
+	}
+	</style> 
+	
+	<body> 
+	 
+	<div id="clockdiv"> 
+	  <div> 
+		<span class="days" id="day"></span> 
+		<div class="smalltext">Days</div> 
+	  </div> 
+	  <div> 
+		<span class="hours" id="hour"></span> 
+		<div class="smalltext">Hours</div> 
+	  </div> 
+	  <div> 
+		<span class="minutes" id="minute"></span> 
+		<div class="smalltext">Minutes</div> 
+	  </div> 
+	  
+	  <div> 
+		  
+		<span class="seconds" id="second"></span> 
+		<div class="smalltext">Seconds</div> 
+	  </div> 
+	</div> 
 							<div class="row">
 								<div class="col-md-12 desc">
-									<h2>Our webiste is opening soon. <br> Please be connected with our social media!</h2>
+									<!-- <h2>Our webiste is opening soon. <br> Please be connected with our social media!</h2> -->
 									<!-- <form class="form-inline" id="fh5co-header-subscribe">
 										<div class="col-md-12 col-md-offset-0">
 											<div class="form-group">
@@ -77,6 +128,8 @@
 											</div>
 										</div>
 									</form> -->
+									<br>
+									
 									<ul class="fh5co-social-icons">
 										<li><a href="https://twitter.com/weboratory?s=09"><i class="icon-twitter-with-circle"></i></a></li>
 										<!-- <li><a href="#"><i class="icon-facebook-with-circle"></i></a></li> -->
@@ -90,7 +143,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="bg-cover js-fullheight" style="background-image:url(images/pp.jpeg);">
+	
+		<div class="bg-cover js-fullheight" style="background-image:url(https://images.pexels.com/photos/1438275/pexels-photo-1438275.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);">
 			
 		</div>
 	</div>
@@ -114,25 +168,33 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-	<script>
-    var d = new Date(new Date().getTime() + 61 * 120 * 120 * 2000);
-
-    // default example
-    simplyCountdown('.simply-countdown-one', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate()
-    });
-
-    //jQuery example
-    $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
-        enableUtc: false
-    });
-</script>
-
+	<p id="demo"></p> 
+  
+<script> 
+  
+var deadline = new Date("dec 1, 2019 12:00:25").getTime(); 
+  
+var x = setInterval(function() { 
+  
+var now = new Date().getTime(); 
+var t = deadline - now; 
+var days = Math.floor(t / (1000 * 60 * 60 * 24)); 
+var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
+var seconds = Math.floor((t % (1000 * 60)) / 1000); 
+document.getElementById("day").innerHTML =days ; 
+document.getElementById("hour").innerHTML =hours; 
+document.getElementById("minute").innerHTML = minutes;  
+document.getElementById("second").innerHTML =seconds;  
+if (t < 0) { 
+        clearInterval(x); 
+        document.getElementById("demo").innerHTML = "TIME UP"; 
+        document.getElementById("day").innerHTML ='0'; 
+        document.getElementById("hour").innerHTML ='0'; 
+        document.getElementById("minute").innerHTML ='0' ;  
+        document.getElementById("second").innerHTML = '0'; } 
+}, 1000); 
+</script> 
 	</body>
 </html>
 
